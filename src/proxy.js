@@ -9,11 +9,13 @@ export async function proxy(request) {
     })
     console.log(session)
 
-    return NextResponse.next()
+    if(session){
+        return NextResponse.next()
+    }
 
-    // return NextResponse.redirect(new URL('/login', request.url))
+    return NextResponse.redirect(new URL('/login', request.url))
 }
 
 export const config = {
-  matcher: ['/about'],
+  matcher: ['/about','/career','/my/:id*'],
 }
