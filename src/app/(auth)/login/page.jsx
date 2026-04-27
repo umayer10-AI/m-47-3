@@ -1,5 +1,6 @@
 "use client"
 import Navbar from '@/component/Navbar';
+import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -11,8 +12,22 @@ const Loginpage = () => {
 
     const [s, setS] = useState(false)
 
-    const a = (v) => {
+    const a = async (v) => {
         console.log(v)
+        const { data, error } = await authClient.signIn.email({
+                    email: v.email,
+                    password: v.password,
+                    callbackURL: "/",
+                });
+        
+                console.log({data,error})
+        
+                if(data){
+                    alert("Login Successfully")
+                }
+                if(error){
+                    alert(error.message)
+                }
     }
 
     // console.log(errors)
