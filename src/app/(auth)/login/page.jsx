@@ -53,7 +53,7 @@ const Loginpage = () => {
 
                     <button className="btn btn-neutral my-4">Login</button>
 
-                    <p className='text-center font-semibold text-base'>Dont’t Have An Account ? <Link href={'/login'} className='text-red-600'>Register</Link></p>
+                    <p className='text-center font-semibold text-base'>Dont’t Have An Account ? <Link href={'/register'} className='text-red-600'>Register</Link></p>
                 </form>
             </div>
         </div>
