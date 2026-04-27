@@ -17,6 +17,7 @@ const Loginpage = () => {
         const { data, error } = await authClient.signIn.email({
                     email: v.email,
                     password: v.password,
+                    rememberMe: true,
                     callbackURL: "/",
                 });
         

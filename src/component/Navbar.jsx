@@ -24,7 +24,7 @@ const Navbar = () => {
                 <h2 className='text-4xl'><FaCircleUser /></h2>
                 
                 {
-                    user? <button className='btn btn-info text-white'>LogOut</button>
+                    user? <button onClick={async() => await authClient.signOut()} className='btn btn-info text-white'>LogOut</button>
                     : <Link href={'/login'} className='btn bg-black text-white px-7'>Login</Link>
                 }
             </div>
