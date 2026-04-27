@@ -14,7 +14,7 @@ const Registerpage = () => {
         console.log(v)
     }
     
-    // console.log(errors)
+    // console.log(watch("name"))
 
     return (
         <div>
